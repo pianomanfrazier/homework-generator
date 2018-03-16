@@ -1,0 +1,117 @@
+\documentclass[12pt, letterpaper]{extarticle}
+\usepackage{fontspec}
+\setmainfont{CrimsonText}
+%\setmainfont{Vollkorn}
+%\setmainfont{Lora}
+%\setmainfont{Droid Serif}
+%\setmainfont{Noto Serif}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{titlesec}
+\usepackage{amsthm,amssymb,amsfonts,amsmath}
+\usepackage{algorithmic, algorithm}
+\usepackage{enumitem}
+\usepackage{geometry}
+\usepackage{subcaption}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\graphicspath{{./figures/}}
+\geometry{
+a4paper,
+headheight=110pt,
+bottom=30mm,
+footskip=20mm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\setlength\parindent{0pt}
+\setlength\parskip{1em}
+
+% this adjusts for left and right closing quotes
+\usepackage [english]{babel}
+\usepackage [autostyle, english = american]{csquotes}
+\MakeOuterQuote{"}
+
+% custom section
+\titleformat{\section}
+{\normalfont\Large\bfseries}
+{}
+{0pt}
+{}
+
+% for code highlighting with python Pygments
+% can't use monokai for bash, words stay black in listing env
+\usepackage{listings}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{minted}
+%\usemintedstyle{monokai}
+\usemintedstyle{friendly}
+\definecolor{bg}{rgb}{0.96,0.96,0.96}
+% monokai background
+%\definecolor{bg}{rgb}{0.15,0.16,0.13}
+
+%%%%%%%%% Link Colors %%%%%%%%%%%%
+
+\newcommand\myshade{85}
+\colorlet{mylinkcolor}{violet}
+\colorlet{mycitecolor}{YellowOrange}
+\colorlet{myurlcolor}{Aquamarine}
+
+\hypersetup{
+  linkcolor  = mylinkcolor!\myshade!black,
+  citecolor  = mycitecolor!\myshade!black,
+  urlcolor   = myurlcolor!\myshade!black,
+  colorlinks = true,
+}
+
+
+% these are for algorithms
+% Usage:
+% \REQURE is rendered as Input:
+% \ENSURE is rendered as Output:
+\renewcommand{\algorithmicrequire}{\textbf{Input:}}
+\renewcommand{\algorithmicensure}{\textbf{Output:}}
+\renewcommand{\algorithmiccomment}[1]{\bgroup\hfill//~#1\egroup}
+
+% variables for the template
+\newcommand{\yourName}{MYNAMEVAR}
+\newcommand{\classNumber}{COURSENUMVAR}
+\newcommand{\instructor}{INSTRUCTORVAR}
+\newcommand{\className}{COURSENAMEVAR}
+\newcommand{\semester}{SEMESTERVAR}
+
+\rhead{\yourName}
+\chead{\classNumber}
+\lhead{Homework \# HOMEWKNUMVAR}
+\cfoot{Page \thepage \ of \pageref{LastPage}}
+\renewcommand{\footrulewidth}{0.1pt}
+
+\title{Homework \# HOMEWKNUMVAR}
+\author{\yourName}
+\date{\today}
+ 
+\begin{document}
+
+
+\begin{titlepage}
+\maketitle
+\centering
+\vspace{2.5cm}
+\classNumber \qquad \className \qquad \semester\\
+\vspace{0.5cm}
+\instructor
+\thispagestyle{empty}
+\end{titlepage}
+
+\section{1}
+
+Blah blah blah.
+
+\subsection{1.1}
+
+\section{2}
+
+\subsection{2.2}
+
+\end{document}
