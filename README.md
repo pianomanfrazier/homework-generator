@@ -18,3 +18,16 @@ COURSE_NAME="Super Duper Math Class"
 SEMESTER="Spring 2018"
 INSTRUCTOR="Dr. Albert Einstein"
 ```
+
+## Usage
+
+```bash
+#copy script and template directory to your path
+cp -r new_hw.sh hwtemp ~/bin
+
+#create homework directory with and place a .cfg file in it
+mkdir math1010
+cp class.cfg math1010
+cd math1010
+new_hw 1 hw1
+```
